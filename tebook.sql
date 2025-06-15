@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-06-15 05:57:04
+-- 產生時間： 2025-06-15 06:17:18
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -72,6 +72,18 @@ INSERT INTO `horror novels` (`ID`, `title`, `year`, `writer`, `Publisher`, `pric
 (29, '廢墟學園', 2006, '張雅婷', '異界出版', 449),
 (30, '鬼市迷蹤', 2013, '吳欣怡', '驚悚出版社', 535);
 
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `users`
+--
+
+CREATE TABLE `users` (
+  `ID` int(11) NOT NULL COMMENT '主鍵',
+  `username` varchar(64) NOT NULL COMMENT '帳號',
+  `userpass` varchar(255) NOT NULL COMMENT '密碼'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- 已傾印資料表的索引
 --
@@ -83,6 +95,12 @@ ALTER TABLE `horror novels`
   ADD PRIMARY KEY (`ID`,`title`);
 
 --
+-- 資料表索引 `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -91,6 +109,12 @@ ALTER TABLE `horror novels`
 --
 ALTER TABLE `horror novels`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主鍵', AUTO_INCREMENT=31;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `users`
+--
+ALTER TABLE `users`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主鍵';
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
